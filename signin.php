@@ -1,22 +1,129 @@
-<!DOCTYPE HTML>
-<form action="login.php" method="post">
+<?php
+include_once("connect_db.php");
+session_start();
+?>
 
-<h2>LOGIN</h2>
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="stylesheet" href="">
+        <meta charset="UTF-8">
+        <title>Wankers by Epitech</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="stylesheet.css" rel="stylesheet">
+    </head>
 
-<?php if (isset($_GET['error'])) { ?>
+<body class="login">
+ <div class=“popup” id=“popup-1”>
+ 
 
-    <p class="error"><?php echo $_GET['error']; ?></p>
+×</div>
 
-<?php } ?>
+   <div class=“content”>
 
-<label>User Name</label>
+   
+   <div class=“close-btn” onclick="togglePopup()">
 
-<input type="text" name="uname" placeholder="User Name"><br>
+<?php
+// sign-in----------------------------------------------------------
+// is user connected ?
 
-<label>Password</label>
+if (isset($_SESSION['uname'])){ echo 'tu es connecté';  }
 
-<input type="password" name="password" placeholder="Password"><br> 
+//if not connected :
+    // if form is filled
+if (isset($pdo) && isset($_POST['uname']) && isset($_POST['password'])){
+        sign_in($pdo,$_POST['uname'],$_POST['password']);
+        
+        
+    } else {
+        echo "Connectez-vous!\n";  
+    }
+        
+//-----------------------------------------
 
-<button type="submit">Login</button>
+// Sign in function to verify if user exist
+    function sign_in($pdo,$uname,$password){
+            $query_identify = $pdo->query("SELECT * FROM users WHERE username = '$uname'"); 
+            $resuser = $query_identify->fetch(PDO::FETCH_ASSOC);
+        
+                    if ($resuser && $resuser['username'] == $uname && $password == $resuser['password']){
+                        echo "Bienvenue " . htmlspecialchars($resuser['uname']) . "!\n";
+                            $_SESSION['iduser'] = $resuser['id'];
+                            $_SESSION['uname'] = $resuser['username'];
+                            $_SESSION['password'] = $resuser['password'];
+                            $_SESSION['mail'] = $resuser['email'];
+                            print_r($_SESSION);
+                            $userlogin = true;
+                            var_dump($userlogin);
+                            header('Location: index.php');
+                            return $userlogin;
+                    } else {
+                        echo "User name or password are incorrect or don't exist.\n";
+                    }
+        
+            
+}
+?>
 
-</form>
+</div>
+
+
+        <form action="signin.php" method="post">
+
+        <div class="login_title">LOGIN</div>
+
+        <?php if (isset($_GET['error'])) { ?>
+
+        <p class="error"><?php echo $_GET['error']; ?></p>
+
+        <?php } ?>
+
+        <p>User Name</p>
+
+        <div class="login_input_field"><input type="text" name="uname" placeholder="User Name" class="validate"></div><br>
+
+        <p>Password</p>
+
+        <div class="login_input_field"><input type="password" name="password" placeholder="Password" class="validate"></div><br> 
+
+              <button class=second_button type="submit">Login</button>
+
+        </form>
+        
+            <p class="login_p">Don't have an account?<a class="login_a" href="signup.php">Sign up</a> </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+  </div>
+
+
+
+      <script src="range.js"></script>
+
+</body>
+</html>
