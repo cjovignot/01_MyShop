@@ -1,5 +1,8 @@
 
-<!DOCTYPE HTML>
+<?php
+include_once("connect_db.php");
+session_start();
+?>
 <html>
 
     <head>
@@ -21,10 +24,22 @@
                     <a href=""><div class="button_menu">HOME</div></a>
                     <a href=""><div class="button_menu">SHOP</div></a>
                     <a href=""><div class="button_menu">MAGAZINE</div></a>
+                    
+                    <?php if (isset($_SESSION['uname'])){
+                    echo "<div class='profile' >HELLO ". $_SESSION['uname'] . "</div>";
+                    echo "<a href='logout.php'><div class='button_menu' >LOGOUT</div></a>";
+                    }
+                    ?>
+                     <?php if (isset($_SESSION['uname']) && $_SESSION['admin'] == 1){
+                      echo "<a href='admin.php'><div class='button_menu' >ADMIN</div></a>";
+                    }
+                    ?>
                 </div>
                 <div id="cart_login">
                     <a href=""><div id="cart_logo"></div></a>
+                    <!-- <button href="signin.php" onclick="togglePopup()"> <div class="button_menu">LOGIN</div></button> -->
                     <a href="signin.php"><div class="button_menu">LOGIN</div></a>
+                     
                     
                     <a href="#"  id="menu_hamburger"></a>
                 </div>
