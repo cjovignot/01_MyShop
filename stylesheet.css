@@ -221,7 +221,12 @@ body {
 
 
 .profile{
-
+    width: 120px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
     text-decoration: none;
     color: #1b1b1b;
     font-weight: bold;

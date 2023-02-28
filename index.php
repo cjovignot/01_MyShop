@@ -25,13 +25,15 @@ session_start();
                     <a href=""><div class="button_menu">SHOP</div></a>
                     <a href=""><div class="button_menu">MAGAZINE</div></a>
                     
-                    <p><?php if (isset($_SESSION['uname'])){
-                    echo "<div>Hello ". $_SESSION['uname'] . "</div>";
-                    echo "<a href='logout.php'>LOGOUT</a>"; 
-                        
+                    <?php if (isset($_SESSION['uname'])){
+                    echo "<div class='profile' >HELLO ". $_SESSION['uname'] . "</div>";
+                    echo "<a href='logout.php'><div class='button_menu' >LOGOUT</div></a>";
                     }
-                    
-                    ?></p>
+                    ?>
+                     <?php if (isset($_SESSION['uname']) && $_SESSION['admin'] == 1){
+                      echo "<a href='admin.php'><div class='button_menu' >ADMIN</div></a>";
+                    }
+                    ?>
                 </div>
                 <div id="cart_login">
                     <a href=""><div id="cart_logo"></div></a>
