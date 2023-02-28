@@ -122,17 +122,19 @@ foreach($resdisplay_users as $row)
 {
 
     $id=$row['id'];
+    $table=$row['table'];
 echo "<tr>";
 echo "<td>" . $row['id'] . "</td>";
 echo "<td>" . $row['username'] . "</td>";
 echo "<td>" . $row['password'] . "</td>";
 echo "<td>" . $row['email'] . "</td>";
 echo "<td>" . $row['admin'] . "</td>";
-echo "<td><form class='form' method='GET' action='admin_users.php'> 
+echo "<td><form class='form' method='GET' action='admin_user_update.php'> 
 <input type = 'hidden' name = 'id' value = '$id' />
   <input class='input_update'type='submit' value='UPDT' >  </form></td>";
-echo "<td><form class='form' method='GET' action='admin_users.php'> 
+echo "<td><form class='form' method='GET' action='admin_delete.php'> 
 <input type = 'hidden' name = 'id' value = '$id' />
+<input type = 'hidden' name = 'table' value = users /> 
   <input class='input_delete'type='submit' value='X' >  </form></td>";
 
 
