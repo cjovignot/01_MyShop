@@ -11,17 +11,9 @@
 
 <?php
     include("connect_db.php");
-    $host = "localhost";
-    $username = "myshopadmin";
-    $password = "branleurmyshop";
-    $port = "3306";
-    $db = "my_shop";
-    $pdo = connect_db($host, $username, $password, $port, $db);
 ?>
 
 <?php
-
-
 
 $username = $_POST['username'];
 $chk_username = $pdo->prepare("SELECT * FROM users WHERE username=?");
