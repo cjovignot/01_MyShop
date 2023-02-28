@@ -71,8 +71,8 @@
                 </div>
                
                 <a class="menu_admin_a" href="admin_products.php"><div class="menu_admin">PRODUCTS</div></a>
-                <a class="menu_admin_a" href="admin_user.php"><div class="menu_admin">USERS</div></a>  
-                <a class="menu_admin_a" href=""><div class="menu_admin">CATEGORYs</div></a>
+                <a class="menu_admin_a" href="admin_users.php"><div class="menu_admin">USERS</div></a>  
+                <a class="menu_admin_a" href="admin_categories.php"><div class="menu_admin">CATEGORYs</div></a>
                     
                     
          
@@ -81,4 +81,3 @@
 
 
 
-                
