@@ -85,7 +85,6 @@ table.displaytable tfoot .links a{
   border-radius: 5px;
 }
 
-
 .create_admin_menu {
     width: 100%;
     height: 30px;
@@ -107,16 +106,20 @@ table.displaytable tfoot .links a{
     transition: 0.2s;
 }
 
+
+
+
     </style>
  <?php include("nav_bar.php") ?>
 <!-- END NAV ADMIN --------------------------------------- -->
 <!-- DISPLAY PANEL / ACTION --------------------------------------------------------- -->
 <div class="panel" >         
-<div><h1>USER PANEL</h1>
-<p>Manage your User via this CRUD </p></div>
+<div><h1>PRODUCT PANEL</h1>
+<p>Manage your products via this CRUD </p></div>
 <div>
-<a class="create_admin_menu" href="signup.php">Add user</a>
+<a class="create_admin_menu" href="admincreateproducts.php">Add product</a>
 </div>  
+
 
 <div>
 
@@ -129,37 +132,40 @@ if (isset($_SESSION['uname']) && $_SESSION['admin'] == 0){
                     }
 
 
-display_db_user($pdo);
-function display_db_user($pdo){
-$display_users = $pdo->query("SELECT * FROM users");
-$resdisplay_users = $display_users->fetchAll(PDO::FETCH_ASSOC);
+display_db_product($pdo);
+function display_db_product($pdo){
+$display_products = $pdo->query("SELECT * FROM products");
+$resdisplay_products = $display_products->fetchAll(PDO::FETCH_ASSOC);
 
 echo "<table class='displaytable' >
 <tr>
-<th>Firstname</th>
-<th>Lastname</th>
-<th>Password</th>
-<th>Email</th>
-<th>Admin</th>
+<th>id</th>
+<th>name</th>
+<th>description</th>
+<th>price</th>
+<th>picture</th>
+<th>category_id</th>
 </tr>";
 
-foreach($resdisplay_users as $row)
+
+foreach($resdisplay_products as $row)
 {
 
     $id=$row['id'];
-    $table=$row['table'];
+    
 echo "<tr>";
 echo "<td>" . $row['id'] . "</td>";
-echo "<td>" . $row['username'] . "</td>";
-echo "<td>" . $row['password'] . "</td>";
-echo "<td>" . $row['email'] . "</td>";
-echo "<td>" . $row['admin'] . "</td>";
-echo "<td><form class='form' method='GET' action='admin_user_update.php'> 
+echo "<td>" . $row['name'] . "</td>";
+echo "<td>" . $row['description'] . "</td>";
+echo "<td>" . $row['price'] . "€"."</td>";
+echo "<td>" . $row['image_path'] . "</td>";
+echo "<td>" . $row['category_id'] . "</td>";
+echo "<td><form class='form' method='GET' action='adminupdateproducts.php'> 
 <input type = 'hidden' name = 'id' value = '$id' />
   <input class='input_update'type='submit' value='UPDT' >  </form></td>";
 echo "<td><form class='form' method='GET' action='admin_delete.php'> 
 <input type = 'hidden' name = 'id' value = '$id' />
-<input type = 'hidden' name = 'table' value = users /> 
+<input type = 'hidden' name = 'table' value = products /> 
   <input class='input_delete'type='submit' value='X' >  </form></td>";
 
 

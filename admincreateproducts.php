@@ -3,7 +3,6 @@
 include_once ("connect_db.php");
 
 
-$PDO_connection = connect_db();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$productname = $_POST["name"];
@@ -26,17 +25,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   //var_dump($image_path);
 	// Insert product into database
-	$createProduct = $PDO_connection->prepare("INSERT INTO products (name, price, description, image_path) VALUES (:name, :price, :description, :image_path)");
+	$createProduct = $pdo->prepare("INSERT INTO products (name, price, description, image_path) VALUES (:name, :price, :description, :image_path)");
 	$createProduct->bindParam(':name', $productname);
 	$createProduct->bindParam(':price', $price);
 	$createProduct->bindParam(':description', $description);
 	$createProduct->bindParam(':image_path', $image_path);
 	$createProduct->execute();
+	header('Location: admin_products.php');
+	
 }
 
 	?>
 <!DOCTYPE HTML>
-<form action="adminproducts.php" method="post" enctype="multipart/form-data">
+<form action="admincreateproducts.php" method="post" enctype="multipart/form-data">
 
 <h2>CREATE PRODUCTS</h2>
 

@@ -3,12 +3,13 @@
 include_once ("connect_db.php");
 
 
-$PDO_connection = connect_db();
+echo $_POST['id'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$productname = $_POST["name"];
 	$price = $_POST["price"];
 	$description = $_POST["description"];
+	$idprod = $_POST['id'];
 	
 	// Handle file upload
 	$picture_name = $_FILES["picture"]["name"];
@@ -24,15 +25,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$image_path = null;
 	}
   
-  //var_dump($image_path);
-	// update product into database
-	$updateProduct = $PDO_connection->prepare("UPDATE products SET name = :name, price = :price, description = :description, image_path = :image_path");
-
+  
+	$updateProduct = $pdo->prepare("UPDATE products SET name = :name, price = :price, description = :description, image_path = :image_path WHERE id = '$idprod' ");
+	var_dump($updateProduct);
 	$updateProduct->bindParam(':name', $productname);
 	$updateProduct->bindParam(':price', $price);
 	$updateProduct->bindParam(':description', $description);
 	$updateProduct->bindParam(':image_path', $image_path);
 	$updateProduct->execute();
+	header('Location: admin_products.php');
+	
 }
 
 	?>
@@ -59,8 +61,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <label for="picture">Upload a new Picture:</label>
 
 <input type="file" name="picture"><br> 
-
+<input type="hidden" name="id" value='<?php echo $_GET['id'];?>' ><br> 
 <button type="submit">ADD</button>
+
+
 
 
 </form>
