@@ -55,6 +55,7 @@ if (isset($pdo) && isset($_POST['uname']) && isset($_POST['password'])){
                             $_SESSION['uname'] = $resuser['username'];
                             $_SESSION['password'] = $resuser['password'];
                             $_SESSION['mail'] = $resuser['email'];
+                            $_SESSION['admin'] = $resuser['admin'];
                             print_r($_SESSION);
                             $userlogin = true;
                             var_dump($userlogin);

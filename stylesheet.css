@@ -880,3 +880,45 @@ footer {
     transition: 0.2s;
 }
 }
+
+
+
+
+/* PANEL ADMIN ----------------------------------------- */
+
+.panel{
+    padding: 0px 20px;
+    margin: 0;
+    width: 60%;
+    min-width: 20%;
+    border: 0px black solid;
+}
+
+
+.menu_admin {
+width: 40%;
+height: 20%;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: 0.2s;
+color:black;
+
+
+}
+
+.menu_admin:hover {
+    background-color: #1b1b1b;
+    color: white;
+    transition: 0.2s;
+}
+
+.menu_admin_a:link{
+
+    text-decoration: none!important;
+    color: #1b1b1b;
+    font-weight: bold;
+    font-size: small;
+
+            
+}
