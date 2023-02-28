@@ -65,19 +65,13 @@
 
 
 
-            <div class="item"><button type="button" id="filter_collapse">Filters</button>   
-                <div id="body_filter_title">
-                      DISPLAY BY
-                </div>
+            <div id="admin_menu_left"><button type="button" id="filter_collapse">Filters</button>   
+                <div id="title_menu">DISPLAY BY</div>
                
-                <a class="menu_admin_a" href="admin_products.php"><div class="menu_admin">PRODUCTS</div></a>
-                <a class="menu_admin_a" href="admin_users.php"><div class="menu_admin">USERS</div></a>  
-                <a class="menu_admin_a" href="admin_categories.php"><div class="menu_admin">CATEGORYs</div></a>
-                    
-                    
-         
-                   
-                </div>
+                <a class="link_admin_menu" href="admin_products.php">PRODUCTS</a>
+                <a class="link_admin_menu" href="admin_users.php">USERS</a>  
+                <a class="link_admin_menu" href="admin_categories.php">CATEGORIES</a>
+            </div>
 
 
 
