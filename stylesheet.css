@@ -302,8 +302,36 @@ header {
     justify-content: space-around;
 }
 .form_button {
-    width: 120px;
+    width: 150px;
+    align-self: center;
     height: 30px;
+    margin-top: 30px;
+}
+#discard_button_update {
+    width: 140px;
+    background-color: #d02c2ce3;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: smaller;
+    transition: 0.2s;
+}
+#discard_button_update:active {
+    width: 140px;
+    background-color: #682323e3;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: smaller;
+    transition: 0.2s;
 }
 /* END admin_user_update */
 
