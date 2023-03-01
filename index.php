@@ -112,8 +112,7 @@ session_start();
             </div>
 
             <?php
-            
-            display_db_products($pdo, $_POST['offset']);
+            index_display_products($pdo);
             ?>
         </div>
 
@@ -121,26 +120,9 @@ session_start();
     </body>
 
     <footer>
-        <form action="index.php" method="post">
-            <input type="submit" name="page1" value="1" />
-            <input type="hidden" name="offset" value=$var_offset />
-        </form>
-        <form action="index.php" method="post">
-            <input type="submit" name="page2" value="2" />
-        </form>
-
-
-        <a href="#" class="page">1</a>
-        <a href="#" class="page">2</a>
-        <a href="#" class="page">3</a>
-        <a href="#" class="page">4</a>
-        <a href="#" class="page_responsive">5</a>
-        <a href="#" class="page_responsive">6</a>
-        <a href="#" class="page_responsive">7</a>
-        <a href="#" class="page_responsive">8</a>
-        <a href="#" class="page_responsive">9</a>
-        <a href="#" class="page_responsive">10</a>
-        <a href="#" class="page">></a>
+        <?php
+        include("create_page.php");
+        ?>
     </footer>
 
 </html>
