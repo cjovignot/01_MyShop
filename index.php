@@ -1,6 +1,7 @@
 
 <?php
 include_once("connect_db.php");
+include_once("product_list.php");
 session_start();
 ?>
 <html>
@@ -108,168 +109,27 @@ session_start();
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-
-
-
-
-
-            <div class="item">
-                <a href="" class="item_picture"><img src="img_source/img_wankers/arthur.png" alt="Arthur ASSELIN"></a>
-                <div class="item_description">
-                    <div class="item_left_description">
-                        <div class="item_name">Arthur ASSELIN</div>
-                        <div class="item_details">GUIDE TOURISTIQUE DECADENT</div>
-                        <div class="ranking">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                        </div>
-                    </div>
-                    <div class="item_right_description">
-                        <div class="price">$ 5200</div>
-                        <a href=""><div class="item_cart_plus"></div></a>
-                    </div>
-                </div>
             </div>
 
-            <div class="item">
-                <a href="" class="item_picture"><img src="img_source/img_wankers/images_resized/wanker_baptiste.png" alt="Baptiste MERIENNE"></a>
-                <div class="item_description">
-                    <div class="item_left_description">
-                        <div class="item_name">Baptiste Merienne</div>
-                        <div class="item_details">SKATER DE LA MORT</div>
-                        <div class="ranking">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                        </div>
-                    </div>
-                    <div class="item_right_description">
-                        <div class="price">$ 5200</div>
-                        <a href=""><div class="item_cart_plus"></div></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <a href="" class="item_picture"><img src="img_source/img_wankers/images_resized/wanker_cosme.png" alt="Cosme JOVIGNOT"></a>
-                <div class="item_description">
-                    <div class="item_left_description">
-                        <div class="item_name">Cosme JOVIGNOT</div>
-                        <div class="item_details">DU MUSCLE PAR PALETTES</div>
-                        <div class="ranking">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                        </div>
-                    </div>
-                    <div class="item_right_description">
-                        <div class="price">$ 1,50</div>
-                        <a href=""><div class="item_cart_plus"></div></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <a href="" class="item_picture"><img src="img_source/img_wankers/images_resized/wanker_dino.png" alt="Dino Balletti"></a>
-                <div class="item_description">
-                    <div class="item_left_description">
-                        <div class="item_name">Dino BALLETTI</div>
-                        <div class="item_details">CHEF MONTEUR IKEA</div>
-                        <div class="ranking">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                        </div>
-                    </div>
-                    <div class="item_right_description">
-                        <div class="price">$ 10 000</div>
-                        <a href=""><div class="item_cart_plus"></div></a>
-                    </div> 
-                </div>  
-            </div>
-
-            <div class="item">
-                <a href="" class="item_picture"><img src="img_source/img_wankers/images_resized/wanker_jean.png" alt="Jean GOUTTIER"></a>
-                <div class="item_description">
-                    <div class="item_left_description">
-                        <div class="item_name">Jean GOUTTIER</div>
-                        <div class="item_details">CLOWN D'ANNIVERSAIRE</div>
-                        <div class="ranking">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                        </div>
-                    </div>
-                    <div class="item_right_description">
-                        <div class="price">$ 158</div>
-                        <a href=""><div class="item_cart_plus"></div></a>
-                    </div> 
-                </div>  
-            </div>
-
-            <div class="item">
-                <a href="" class="item_picture"><img src="img_source/img_wankers/images_resized/wanker_lorie.png" alt="Lorie OHANYAN"></a>
-                <div class="item_description">
-                    <div class="item_left_description">
-                        <div class="item_name">Lorie OHANYAN</div>
-                        <div class="item_details">DEV EN DEVENIR</div>
-                        <div class="ranking">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star.png" alt="">
-                        </div>
-                    </div>
-                    <div class="item_right_description">
-                        <div class="price">$ 1005</div>
-                        <a href=""><div class="item_cart_plus"></div></a>
-                    </div> 
-                </div>  
-            </div>
-
-            <div class="item">
-                <a href="" class="item_picture"><img src="img_source/img_wankers/images_resized/wanker_nicolas.png" alt="Nicolas ROCAGEL"></a>
-                <div class="item_description">
-                    <div class="item_left_description">
-                        <div class="item_name">Nicolas ROCAGEL</div>
-                        <div class="item_details">ESCORT BOY</div>
-                        <div class="ranking">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                            <img src="img_source/img_website/Star - On.png" alt="">
-                        </div>
-                    </div>
-                    <div class="item_right_description">
-                        <div class="price">$ 250</div>
-                        <a href=""><div class="item_cart_plus"></div></a>
-                    </div> 
-                </div>  
-            </div>
-
-
+            <?php
+            
+            display_db_products($pdo, $_POST['offset']);
+            ?>
         </div>
 
         <script src="range.js"></script>
     </body>
 
     <footer>
+        <form action="index.php" method="post">
+            <input type="submit" name="page1" value="1" />
+            <input type="hidden" name="offset" value=$var_offset />
+        </form>
+        <form action="index.php" method="post">
+            <input type="submit" name="page2" value="2" />
+        </form>
+
+
         <a href="#" class="page">1</a>
         <a href="#" class="page">2</a>
         <a href="#" class="page">3</a>

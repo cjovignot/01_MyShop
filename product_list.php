@@ -23,8 +23,8 @@ include_once("connect_db.php");
     <link href="stylesheet.css" rel="stylesheet">
 </head>
 <?php
-        display_db_products($pdo);
-        function display_db_products($pdo){
+        
+        function display_db_products($pdo, $var_offset){ //CHANGE NAME
             $display_products = $pdo->query("SELECT * FROM products");
             $resdisplay_products = $display_products->fetchAll(PDO::FETCH_ASSOC);
 
@@ -37,7 +37,7 @@ include_once("connect_db.php");
                         <div class="item_description">
                             <div class="item_left_description">
                                 <div class="item_name"><?php echo $row['name'];?></div>
-                                <div class="item_details"><?php echo $row['description'];?></div>
+                                <div class="item_details"><?php echo strtoupper($row['description']);?></div>
                                 <div class="ranking">
                                     <img src="img_source/img_website/Star - On.png" alt="">
                                     <img src="img_source/img_website/Star - On.png" alt="">
@@ -47,7 +47,7 @@ include_once("connect_db.php");
                                 </div>
                             </div>
                             <div class="item_right_description">
-                                <div class="price"><?php echo $row['price'];?></div>
+                                <div class="price"><?php echo $row['price'] . " €";?></div>
                                 <a href=""><div class="item_cart_plus"></div></a>
                             </div>
                         </div>

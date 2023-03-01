@@ -475,6 +475,7 @@ body {
     flex-wrap: wrap;
     margin: 0 8%;
     margin-top: 150px;
+    margin-bottom: 100px;
     width: auto;
 }
     .item {
@@ -604,6 +605,31 @@ footer {
     transition: 0.2s;
 }
 
+
+/* START - STYLE FOR SUBMIT BUTTONS [FOOTER PAGE BUTTON] */
+footer input[type=submit] {
+    color: #1b1b1b;
+    font-size: 12px;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    text-decoration: none;
+    align-items: center;
+    height: 40px;
+    font-weight: bold;
+    width: 40px;
+    display: flex;
+    margin: 0px 10px;
+    transition: 0.2s;
+}
+footer input[type=submit]:hover {
+    background-color: #1b1b1b;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+/* END - STYLE FOR SUBMIT BUTTONS [FOOTER PAGE BUTTON] */
 
 /* 
 login page */
