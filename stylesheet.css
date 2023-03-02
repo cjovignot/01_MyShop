@@ -388,6 +388,28 @@ body {
     left: 0;
     height: 0.1px;
 }
+.form_test input[type=submit] {
+    color: #1b1b1b;
+    font-size: 16px;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    text-decoration: none;
+    height: 40px;
+    font-weight: bold;
+    width: 100px;
+    display: flex;
+    border: 3px solid;
+    margin: 20px auto;
+    transition: 0.2s;
+}
+.form_test input[type=submit]:hover {
+    background-color: #1b1b1b;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
 #range_test_label {
     color: black;
     width: 100%;
@@ -409,6 +431,7 @@ body {
     justify-content: flex-start;
     margin: 0 9.4%;
     font-weight: bold;
+    margin-bottom: -120px;
     margin-top: 70px;
 }
 /* END FILTER TEST */
@@ -529,7 +552,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin: 0 8%;
-    margin-top: 20px;
+    margin-top: 140px;
     margin-bottom: 100px;
     width: auto;
 }
