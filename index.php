@@ -69,50 +69,59 @@ session_start();
     </header>
 
     <body>
+        <div id="infos_filter">
+            <?php
+                if ($_GET) {
+                    echo "Active filters : " . "collection = " . $_GET['collection'] . " / " . "Color = " . $_GET['color'] . " / " . "Category = " . $_GET['category'] . " / " . "MIN Price = " . $_GET['min_range'] . " €" . " / " . "MAX Price = " . $_GET['max_range'] . " €";
+                }
+            ?>
+        </div>
         <div id="container">
-
+        <?php
+        include_once("active_filter.php");
+        ?>
+<!--         
             <div class="item"><button type="button" id="filter_collapse">Filters</button>   
-                <div id="body_filter_title">
-                      FILTER BY
-                </div>
+                <div id="body_filter_title">FILTER BY</div>
                 <button type="button" class="match_collapse">Best match</button> 
-                <button type="button" class="filter_collapse">Filters</button> 
-                    <div class="filter_item_collapse">
-                            <select class="body_filter_item">
-                                <option value="0">Collection</option>
-                                <option value="1" class="body_filter_item_option">Collection 1</option>
-                            </select>
+                <button type="button" class="filter_collapse">Filters</button>
+                <div class="filter_item_collapse">
+                    <select class="body_filter_item">
+                        <option value="">-- Choose a collection --</option>
+                        <option value="0">Collection</option>
+                        <option value="1" class="body_filter_item_option">Collection 1</option>
+                    </select>
+                </div>
+                <div class="filter_item_collapse">
+                    <select class="body_filter_item">
+                        <option value="">-- Choose a color --</option>
+                        <option value="0">Color</option>
+                        <option value="1" class="body_filter_item_option">Color 2</option>
+                    </select>
+                </div>
+                <div class="filter_item_collapse">
+                    <select class="body_filter_item">
+                        <option value="">-- Choose a category --</option>
+                        <option value="0" class="body_filter_item_option">Category</option>
+                        <option value="1" class="body_filter_item_option">Category 1</option>
+                    </select>
+                </div>
+                <div class="filter_item_collapse">
+                    <div id="body_filter_range_title">Price range</div>
+                    <div class="body_filter_range">
+                        <input id="minV" type="range" class="min-price"  value="50" min="50" max="10000" step="50">
+                        <input id="maxV" type="range" class="max-price" value="10000" min="50" max="10000" step="50">
                     </div>
-                    <div class="filter_item_collapse">
-                            <select class="body_filter_item">
-                                <option value="0">Color</option>
-                                <option value="1" class="body_filter_item_option">Color 2</option>
-                            </select>
-                    </div>
-                    <div class="filter_item_collapse">
-                            <select class="body_filter_item">
-                                <option value="0" class="body_filter_item_option">Category</option>
-                                <option value="1" class="body_filter_item_option">Category 1</option>
-                            </select>
-                    </div>
-                    <div class="filter_item_collapse">
-                        <div id="body_filter_range_title">
-                            Price range
+                    <div class="price-content">
+                        <div>
+                            <p id="min-value">$50</p>
                         </div>
-                        <div class="body_filter_range">
-                            <input id="minV" type="range" class="min-price"  value="50" min="50" max="10000" step="50">
-                            <input id="maxV" type="range" class="max-price" value="10000" min="50" max="10000" step="50">
-                          </div>
-                        <div class="price-content">
-                            <div>
-                                <p id="min-value">$50</p>
-                            </div>
-                            <div >
-                                <p id="max-value">$10000</p>
-                            </div>
+                        <div >
+                            <p id="max-value">$10000</p>
                         </div>
                     </div>
-            </div>
+                </div>
+            </div> -->
 
             <?php
             index_display_products($pdo);
@@ -124,7 +133,7 @@ session_start();
 
     <footer>
         <?php
-        include("create_page.php");
+            include("create_page.php");
         ?>
     </footer>
 
