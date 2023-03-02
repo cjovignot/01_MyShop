@@ -47,9 +47,12 @@ session_start();
             </div>
             <div id="header_right_bottom">
                     <div id="nav_bar_search">
-                        <input id="search_input" type="text" placeholder="Search...">
+                        <form id="search_bar" action="">
+                            <input id="search_input" type="text" name="query" placeholder="Search...">
+                            <button hidden type="submit"></button>
+                        </form>
                         <!-- Best match déroulant -->
-                        <nav id="best_match">
+                        <!-- <nav id="best_match">
                             <ul>
                               <li class="scrolling_menu"><a href="#">Best match &ensp;</a>
                                 <ul class="sub_menu">
@@ -59,7 +62,7 @@ session_start();
                                 </ul>
                               </li>
                             </ul>
-                        </nav>
+                        </nav> -->
                     </div>
             </div>
         </div>

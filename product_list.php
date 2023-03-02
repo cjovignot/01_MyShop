@@ -51,7 +51,8 @@ session_start();
                     <?php
                 }
             } else {
-            $display_products = $pdo->query("SELECT * FROM products LIMIT 7");
+                $query = $_GET["query"] === NULL ? "" : $_GET["query"];
+            $display_products = $pdo->query("SELECT * FROM products WHERE name LIKE '%$query%' LIMIT 7");
             $resdisplay_products = $display_products->fetchAll(PDO::FETCH_ASSOC);
 
             foreach($resdisplay_products as $row) {

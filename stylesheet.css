@@ -58,6 +58,10 @@ header {
             height: 60px;
             width: 60px;
         }
+        #search_bar {
+            display: flex;
+            width: 100%;
+        }
     #header_right {
         display: flex;
         flex-direction: column;
