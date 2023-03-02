@@ -14,19 +14,18 @@
         <div id="header_right">
             <div id="header_right_top">
                 <div id="buttons_menu">
-                    <a href=""><div class="button_menu">CLIENT</div></a>
-                    <a href=""><div class="button_menu">USERS</div></a>
-                    <a href=""><div class="button_menu">PRODUCTS</div></a>
+                    <a href="index.php"><div class="button_menu">CLIENT</div></a>
+                    <?php if (isset($_SESSION['uname']) && $_SESSION['admin'] == 1){
+                      echo "<a href='admin.php'><div class='button_menu' >ADMIN</div></a>";
+                    }
+                    ?>
                     
                     <?php if (isset($_SESSION['uname'])){
                     echo "<div class='profile' >HELLO ". $_SESSION['uname'] . "</div>";
                     echo "<a href='logout.php'><div class='button_menu' >LOGOUT</div></a>";
                     }
                     ?>
-                     <?php if (isset($_SESSION['uname']) && $_SESSION['admin'] == 1){
-                      echo "<a href='admin.php'><div class='button_menu' >ADMIN</div></a>";
-                    }
-                    ?>
+                    
                 </div>
                 <div id="cart_login">
                     <a href=""><div id="cart_logo"></div></a>
