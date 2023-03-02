@@ -46,7 +46,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// 	$reload = true;
 	// }
 
-	if ($picture_error === UPLOAD_ERR_OK) {
+
+
+	
+	
+
+	if ($_FILES["picture"]["type"] !== "image/png") {
+		$errorimage = "format";
+		$reload = true;
+	  }
+	  
+	 $image_info = getimagesize($_FILES["picture"]["tmp_name"]);
+	 var_dump($image_info);
+	 $width = $image_info[0];
+	 $height = $image_info[1];
+	 var_dump($width);
+	 //var_dump($height);
+	  //var_dump($width);
+	 if ($width != 800 && $height != 600) {
+		// echo "coucou".$width;
+		// echo "coucou".$height;
+		$errorimage = "Wrong size";
+
+		$reload = true;
+	  }
+	  
+	  if ($picture_error === UPLOAD_ERR_OK) {
 		 //Move uploaded file to desired directory
 		move_uploaded_file($picture_tmp_name, 'uploads/' . $picture_name);
 		$image_path = 'uploads/' . $picture_name;
@@ -57,15 +82,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 
 	if ($image_path == NULL) {
-		$errorimage = "Wrong size or format";
+		$errorimage = "upload pbl";
 		$reload = true;
 
-		
 	}
+
+	  
+	  // move uploaded file to desired location
+	  //move_uploaded_file($_FILES["image"]["tmp_name"], "/path/to/uploaded/image.png");
 
 	if (!$reload){
 		header('Location: admin_products.php');
-  //var_dump($image_path);
+  
 	// Insert product into database
 	$createProduct = $pdo->prepare("INSERT INTO products (name, price, description, image_path) VALUES (:name, :price, :description, :image_path)");
 	$createProduct->bindParam(':name', $productname);
@@ -103,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <label for="picture" class="login_input_field">Upload a Picture:</label>
 
-<div class="login_input_field"><input type="file" name="picture" class="validate"><?php echo $errorimage; ?></div><br> 
+<div class="login_input_field"><input type="file"  name="picture"  class="validate" accept="image/png"required><?php echo $errorimage.$width.$height; ?></div><br> 
 
 <button type="submit">ADD</button>
 
