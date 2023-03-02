@@ -72,7 +72,7 @@ session_start();
         <div id="infos_filter">
             <?php
                 if ($_GET) {
-                    echo "Active filters : " . "collection = " . $_GET['collection'] . " / " . "Color = " . $_GET['color'] . " / " . "Category = " . $_GET['category'] . " / " . "MIN Price = " . $_GET['min_range'] . " €" . " / " . "MAX Price = " . $_GET['max_range'] . " €";
+                    echo "Active filters : " . "Category = " . $_GET['category'] . " / " . "MIN Price = " . $_GET['min_range'] . " €" . " / " . "MAX Price = " . $_GET['max_range'] . " €";
                 }
             ?>
         </div>
