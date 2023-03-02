@@ -11,7 +11,7 @@ session_start();
         $count_product = $pdo->query("SELECT COUNT(*) FROM products");
         $nb_product = $count_product->fetch(PDO::FETCH_NUM);
         $total_product = $nb_product[0];
-        $nb_page = round($total_product / 7);
+        $nb_page = ceil($total_product / 7);
 
         $page_product = 0;
         $var_offset = -7;
