@@ -427,12 +427,17 @@ body {
     margin-top: 12px;
 }
 #infos_filter {
+    border-radius: 32px;
+    align-items: center;
     display: flex;
     justify-content: flex-start;
     margin: 0 9.4%;
     font-weight: bold;
+    height: 34px;
     margin-bottom: -120px;
     margin-top: 70px;
+    border: 1.4px #1b1b1b groove;
+    padding: 0 12px;
 }
 /* END FILTER TEST */
 

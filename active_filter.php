@@ -22,6 +22,9 @@
             <label id="range_test_label" for="filter_test">Price range</label>
             <input id="minV" type="range" class="min-price" name="min_range" value="50" min="50" max="10000" step="50">
             <input id="maxV" type="range" class="max-price" name="max_range" value="10000" min="50" max="10000" step="50">
+            
+            <input hidden type="text" name="search" value="$_SESSION[query]">
+
                 <div id="price_content_test">
                     <div>
                         <p id="min-value">$50</p>
