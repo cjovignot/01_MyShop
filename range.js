@@ -23,23 +23,23 @@ window.onload = () => {
   
   let minValue = document.getElementById("min-value");
   let maxValue = document.getElementById("max-value");
-  let minPrice = parseInt(inputElements[1].value);
-  let maxPrice = parseInt(inputElements[2].value);
+  let minPrice = parseInt(inputElements[2].value);
+  let maxPrice = parseInt(inputElements[3].value);
   console.log("minPrice::html ", minPrice);
   console.log("maxPrice::html ", maxPrice);
 
 
   inputElements.forEach((element) => {
     element.addEventListener("change", (e) => {
-      let minPrice = parseInt(inputElements[1].value);
-      let maxPrice = parseInt(inputElements[2].value);
+      let minPrice = parseInt(inputElements[2].value);
+      let maxPrice = parseInt(inputElements[3].value);
       console.log("minPrice::html ", minPrice);
       console.log("maxPrice::html ", maxPrice);
       validateRange(parseInt(minPrice), parseInt(maxPrice));
     });
   });
 
-  validateRange(inputElements[1].value, inputElements[2].value);
+  validateRange(inputElements[2].value, inputElements[3].value);
 
 
 
