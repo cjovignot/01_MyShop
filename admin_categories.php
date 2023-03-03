@@ -150,12 +150,12 @@ $resdisplay_category = $display_category->fetchAll(PDO::FETCH_ASSOC);
 
 echo "<table class='displaytable' >
 <tr>
-<th>id</th>
-<th>name</th>
-<th>parent_id</th>
-<th>is_sub</th>
-<th>update</th>
-<th>delete</th>
+<th>ID</th>
+<th>NAME</th>
+<th>PARENT</th>
+<th>TYPE</th>
+<th>UPDATE</th>
+<th>DELETE</th>
 </tr>";
 
 
