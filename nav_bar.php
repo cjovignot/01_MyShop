@@ -9,7 +9,6 @@
     <header>
         <div id="header_left">
             <a href="index.php"><div id="home_logo"></div></a>
-            <div id="search_logo"></div>
         </div>
         <div id="header_right">
             <div id="header_right_top">
@@ -29,21 +28,11 @@
                 </div>
                 <div id="cart_login">
                     <a href=""><div id="cart_logo"></div></a>
-                    <!-- <button href="signin.php" onclick="togglePopup()"> <div class="button_menu">LOGIN</div></button> -->
                     <a href="signin.php"><div class="button_menu">LOGIN</div></a>
                      
                     
                     <a href="#"  id="menu_hamburger"></a>
                 </div>
-            </div>
-            <div id="header_right_bottom">
-            <div id="header_right_bottom">
-                    <div id="nav_bar_search">
-                        <form id="search_bar" action="">
-                            <input id="search_input" type="text" name="query" value="<?php echo $_SESSION['query'] ?>" placeholder="Search...">
-                            <button hidden type="submit"></button>
-                        </form>
-                    </div>
             </div>
         </div>
     </header>
@@ -53,16 +42,11 @@
 <div id="container">
 
 
-
-
-
             <div id="admin_menu_left"><button type="button" id="filter_collapse">Filters</button>   
                 <div id="title_menu">DISPLAY BY</div>
-               
-                <a class="link_admin_menu" href="admin_products.php">PRODUCTS</a>
-                <a class="link_admin_menu" href="admin_users.php">USERS</a>  
-                <a class="link_admin_menu" href="admin_categories.php">CATEGORIES</a>
+                <div id="admin_sub_menu_left">
+                    <a class="link_admin_menu" href="admin_products.php">PRODUCTS</a>
+                    <a class="link_admin_menu" href="admin_users.php">USERS</a>  
+                    <a class="link_admin_menu" href="admin_categories.php">CATEGORIES</a>
+                </div>
             </div>
-
-
-

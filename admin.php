@@ -36,68 +36,27 @@ $res_countsub = $countsub->fetch(PDO::FETCH_ASSOC);
         <p>Welcome on the admin panel, from here you are able to manage your user and product database </p>
     </div>
     <div>
-        <table>
-
-            <tr>
-                <td>
-                    <p>USERS:</p>
-                </td>
-                <td>
-                    <h1><?php echo $res_countadmin['Count(id)']; ?></h1>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <p>ADMIN:</p>
-                </td>
-                <td>
-                    <h1><?php echo $res_countadmin['Count(id)']; ?></h1>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <p>PRODUCTS:</p>
-                </td>
-                <td>
-                    <h1><?php echo $res_countproduct['Count(id)']; ?></h1>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <p>CATEGORIES:</p>
-                </td>
-                <td>
-                    <h1><?php echo $res_countcategory['Count(id)']; ?></h1>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <p>SUB CATEGORIES:</p>
-                </td>
-                <td>
-                    <h1><?php echo $res_countsub['Count(id)']; ?></h1>
-                </td>
-            </tr>
-
-
-
-        </table>
-
-
-
+        <div id="infos_admin">
+            <div class="filter_column">USERS
+                <div class="detail_filter"><?php echo $res_countuser['Count(id)']; ?></div>
+            </div>
+            <div class="filter_column">ADMIN 
+                <div class="detail_filter"><?php echo $res_countadmin['Count(id)']; ?></div>
+            </div>
+            <div class="filter_column">PRODUCTS 
+                <div class="detail_filter"><?php echo $res_countproduct['Count(id)']; ?></div>
+            </div>
+            <div class="filter_column">CATEGORIES 
+                <div class="detail_filter"><?php echo $res_countcategory['Count(id)']; ?></div>
+            </div>
+            <div class="filter_column">SUB CATEGORIES 
+                <div class="detail_filter"><?php echo $res_countsub['Count(id)']; ?></div>
+            </div>
+        </div>
     </div>
 
 </div>
 <!-- END DISPLAY PANEL / ACTION --------------------------------------------------------- -->
-
-
-
-
-
 
 
 </body>
