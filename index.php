@@ -4,9 +4,9 @@ include_once("connect_db.php");
 include_once("product_list.php");
 session_start();
 ?>
-<html>
-
+<html lang="en">
     <head>
+        <meta name="description"  content="Book gifted people at a very good price.Our elite team will be there for you, whether you want to learn, fix, enjoy something and so much more 24/7.">
         <link rel="stylesheet" href="">
         <meta charset="UTF-8">
         <title>Wankers by Epitech</title>
@@ -16,7 +16,7 @@ session_start();
 
     <header>
         <div id="header_left">
-            <a href="index.php"><div id="home_logo"></div></a>
+            <a href="index.php" aria-label="Main menu"><div id="home_logo"></div></a>
             <div id="search_logo"></div>
         </div>
         <div id="header_right">
@@ -33,7 +33,7 @@ session_start();
                     ?>
                 </div>
                 <div id="cart_login">
-                    <a href=""><div id="cart_logo"></div></a>
+                    <a href="" aria-label="shopping cart icon"><div id="cart_logo"></div></a>
                     <!-- <button href="signin.php" onclick="togglePopup()"> <div class="button_menu">LOGIN</div></button> -->
                     <a href="signin.php"><div class="button_menu">LOGIN</div></a>
                      
@@ -44,7 +44,7 @@ session_start();
             <div id="header_right_bottom">
                     <div id="nav_bar_search">
                         <form id="search_bar" action="">
-                            <input id="search_input" type="text" name="query" value="<?php echo $_SESSION['query'] ?>" placeholder="Search...">
+                            <input id="search_input" type="text" name="query" value="<?php echo $_SESSION['query'] ?>" placeholder="Search..." aria-label="Search">
                             <button hidden type="submit"></button>
                         </form>
                         <!-- Best match déroulant -->
