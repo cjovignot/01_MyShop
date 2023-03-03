@@ -9,19 +9,29 @@ if (!isset($_SESSION['uname']) && $_SESSION['admin'] != 1) {
 
 <?php
 $id = $_GET['id'];
-var_dump($id);
+//var_dump($id);
 $cat_id = $pdo->query("SELECT * FROM categories WHERE id = '$id'");
 $cat_name = $cat_id->fetch(PDO::FETCH_ASSOC);
 //var_dump($cat_name);
-if (isset($_POST) == true) {
+if (isset($_POST['name']) == true) {
     $catname_set = $_POST['name'];
     $parent_id_set = $_POST['parent_id'];
     $is_sub_set = 0;
     $createstatus = true;
+
     if ($catname_set == NULL) {
-        $createstatus = false;
+
         // header('location: admin_category_create.php');
         $catname_set = $cat_name['name'];
+    }
+
+    if ($_POST['parent_id'] === $id) {
+
+
+        // header('location: admin_category_create.php');
+        echo "You must select a different category";
+        $createstatus = false;
+        // header('location: admin_category_create.php');
     }
     if ($parent_id_set == true) {
         $is_sub_set = 1;
@@ -36,14 +46,12 @@ if (isset($_POST) == true) {
         echo "cat already exist";
         // header('location: admin_category_create.php');
     }
-
-    if ($createstatus == true) {
-        update_categories($pdo, $catname_set, $parent_id_set, $is_sub_set, $id);
-        header('location: admin_categories.php');
-    }
 }
-
-
+var_dump($createstatus);
+if ($createstatus == true) {
+    update_categories($pdo, $catname_set, $parent_id_set, $is_sub_set, $id);
+    header('location: admin_categories.php');
+}
 
 
 

@@ -20,10 +20,36 @@
 		// $new_price = $_POST['price'];
 		// $new_description = $_POST['description'];
 		// $_SESSION['idupdate'] = $_GET['id'];
+		function getcat($pdo)
+		{
+			$cat_db = $pdo->query("SELECT * FROM categories WHERE parent_id = '0'");
+			$res_cat = $cat_db->fetchAll(PDO::FETCH_ASSOC);
+
+			$catsub_db = $pdo->query("SELECT * FROM categories WHERE parent_id > '0'");
+			$res_catsub = $catsub_db->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+			foreach ($res_cat as $cat) {
+				echo " <option style='background-color: #F9C22E;' name=" . $cat['id'] . " value='" . $cat['id'] . "'>" . $cat['name'] . "</option>";
+
+				$parentid = $cat['id'];
+				$catsub_db = $pdo->query("SELECT * FROM categories WHERE parent_id = '$parentid'");
+				$res_catsub = $catsub_db->fetchAll(PDO::FETCH_ASSOC);
+
+				$catparent_db = $pdo->query("SELECT * FROM categories WHERE id = '$parentid'");
+				$res_catparent = $catparent_db->fetchAll(PDO::FETCH_ASSOC);
+
+				foreach ($res_catsub as $catsub) {
+					echo " <option  name=" . $catsub['id'] . " value='" . $catsub['id'] . "'>" . $catsub['name'] . "</option>";
+				}
+			}
+		}
 
 
 		$productname = $_POST["name"];
 		$price = $_POST["price"];
+		$cat_id = $_POST["cat_id"];
 		$description = $_POST["description"];
 		$image = $_POST["image_path"];
 		$idprod = $_POST['id'];
@@ -40,6 +66,7 @@
 				$_SESSION['old_description'] = $row['description'];
 				$_SESSION['old_price'] = $row['price'];
 				$_SESSION['old_image'] = $row['image_path'];
+				$_SESSION['old_cat'] = $row['category_id'];
 
 				//var_dump($_SESSION);
 				// var_dump($_SESSION['old_password']);
@@ -48,6 +75,10 @@
 			echo "No product found";
 		}
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+			if ($cat_id == NULL) {
+				$cat_id = $_SESSION['old_cat'];
+			}
 
 			if ($productname == NULL) {
 				$productname = $_SESSION['old_productname'];
@@ -60,6 +91,7 @@
 			if ($price == NULL) {
 				$price = $_SESSION['old_price'];
 			}
+			$formaterror = false;
 			//var_dump($_FILES);
 			// Handle file upload
 			$picture_name = $_FILES["picture"]["name"];
@@ -105,10 +137,13 @@
 				$image_path = $_SESSION['old_image'];
 			}
 			if ($formaterror == false) {
-				$updateProduct = $pdo->prepare("UPDATE products SET name = :name, price = :price, description = :description, image_path = :image_path WHERE id = '$idprod' ");
+				var_dump($cat_id);
+				var_dump($formaterror);
+				$updateProduct = $pdo->prepare("UPDATE products SET name = :name, price = :price, category_id = :category_id, description = :description, image_path = :image_path WHERE id = '$idprod' ");
 				//var_dump($updateProduct);
 				$updateProduct->bindParam(':name', $productname);
 				$updateProduct->bindParam(':price', $price);
+				$updateProduct->bindParam(':category_id', $cat_id);
 				$updateProduct->bindParam(':description', $description);
 				$updateProduct->bindParam(':image_path', $image_path);
 				$updateProduct->execute();
@@ -145,6 +180,14 @@
 			<label>Description</label>
 			<div class="input_admin_form">
 				<input type="text" name="description" placeholder="Enter new description"><br>
+			</div>
+
+			<label>Select a category</label>
+			<div class="login_input_field">
+				<select name="cat_id">
+					<option name="isparent" value='0'></option>
+					<?php getcat($pdo) ?>
+				</select><br>
 			</div>
 
 			<label for="picture">Upload a new Picture:</label>
