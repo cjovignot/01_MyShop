@@ -16,16 +16,12 @@ session_start();
 
     <header>
         <div id="header_left">
-            <div id="home_logo"></div>
+            <a href="index.php"><div id="home_logo"></div></a>
             <div id="search_logo"></div>
         </div>
         <div id="header_right">
             <div id="header_right_top">
                 <div id="buttons_menu">
-                    <a href=""><div class="button_menu">HOME</div></a>
-                    <a href=""><div class="button_menu">SHOP</div></a>
-                    <a href=""><div class="button_menu">MAGAZINE</div></a>
-                    
                     <?php if (isset($_SESSION['uname'])){
                     echo "<div class='profile' >HELLO ". $_SESSION['uname'] . "</div>";
                     echo "<a href='logout.php'><div class='button_menu' >LOGOUT</div></a>";
@@ -70,15 +66,15 @@ session_start();
 
     <body>
         <div id="infos_filter">
-            <div>Active filters : </div>
+            <div id="active_filter_title">Active filters</div>
             <div class="filter_column">Category
-                <div><?php if ($_GET) { echo $_GET['category']; } ?></div>
+                <div class="detail_filter"><?php if ($_GET) { echo $_GET['category']; } ?></div>
             </div>
             <div class="filter_column">MIN 
-                <div><?php if ($_GET) { echo $_GET['min_range'] . " €"; } ?></div>
+                <div class="detail_filter"><?php if ($_GET) { echo $_GET['min_range'] . " €"; } ?></div>
             </div>
             <div class="filter_column">MAX 
-                <div><?php if ($_GET) { echo $_GET['max_range'] . " €"; } ?></div>
+                <div class="detail_filter"><?php if ($_GET) { echo $_GET['max_range'] . " €"; } ?></div>
             </div>
         </div>
         <div id="container">

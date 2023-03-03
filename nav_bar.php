@@ -8,7 +8,7 @@
 
     <header>
         <div id="header_left">
-            <div id="home_logo"></div>
+            <a href="index.php"><div id="home_logo"></div></a>
             <div id="search_logo"></div>
         </div>
         <div id="header_right">
@@ -37,20 +37,12 @@
                 </div>
             </div>
             <div id="header_right_bottom">
+            <div id="header_right_bottom">
                     <div id="nav_bar_search">
-                        <input id="search_input" type="text" placeholder="Search...">
-                        <!-- Best match déroulant -->
-                        <nav id="best_match">
-                            <ul>
-                              <li class="scrolling_menu"><a href="#">Best match &ensp;</a>
-                                <ul class="sub_menu">
-                                  <li><a href="#">Match #1</a></li>
-                                  <li><a href="#">Match #2</a></li>
-                                  <li><a href="#">Match #3</a></li>
-                                </ul>
-                              </li>
-                            </ul>
-                        </nav>
+                        <form id="search_bar" action="">
+                            <input id="search_input" type="text" name="query" value="<?php echo $_SESSION['query'] ?>" placeholder="Search...">
+                            <button hidden type="submit"></button>
+                        </form>
                     </div>
             </div>
         </div>

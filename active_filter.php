@@ -3,7 +3,7 @@
     <label id="filter_test_label" for="filter_test">FILTER BY</label>
 
     <form class="form_test" method="get">
-        <select name="category" class="field">
+        <select id="category_field" name="category" class="field">
             <option value="none">
                 <?php
                     if ($_GET['category']) {
