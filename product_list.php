@@ -35,11 +35,11 @@ session_start();
                                 <div class="item_name"><?php echo $row['name'];?></div>
                                 <div class="item_details"><?php echo strtoupper($row['description']);?></div>
                                 <div class="ranking">
-                                    <img src="img_source/img_website/Star - On.png" alt="">
-                                    <img src="img_source/img_website/Star - On.png" alt="">
-                                    <img src="img_source/img_website/Star - On.png" alt="">
-                                    <img src="img_source/img_website/Star.png" alt="">
-                                    <img src="img_source/img_website/Star.png" alt="">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="">
+                                    <img src="img_source/img_website/StarW.png" alt="">
+                                    <img src="img_source/img_website/StarW.png" alt="">
                                 </div>
                             </div>
                             <div class="item_right_description">
@@ -65,11 +65,11 @@ session_start();
                                 <div class="item_name"><?php echo $row['name'];?></div>
                                 <div class="item_details"><?php echo strtoupper($row['description']);?></div>
                                 <div class="ranking">
-                                    <img src="img_source/img_website/Star - On.png" alt="">
-                                    <img src="img_source/img_website/Star - On.png" alt="">
-                                    <img src="img_source/img_website/Star - On.png" alt="">
-                                    <img src="img_source/img_website/Star.png" alt="">
-                                    <img src="img_source/img_website/Star.png" alt="">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="">
+                                    <img src="img_source/img_website/StarW.png" alt="">
+                                    <img src="img_source/img_website/StarW.png" alt="">
                                 </div>
                             </div>
                             <div class="item_right_description">
@@ -97,11 +97,11 @@ session_start();
                                 <div class="item_name"><?php echo $row['name'];?></div>
                                 <div class="item_details"><?php echo strtoupper($row['description']);?></div>
                                 <div class="ranking">
-                                    <img src="img_source/img_website/Star - On.png" alt="">
-                                    <img src="img_source/img_website/Star - On.png" alt="">
-                                    <img src="img_source/img_website/Star - On.png" alt="">
-                                    <img src="img_source/img_website/Star.png" alt="">
-                                    <img src="img_source/img_website/Star.png" alt="">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="">
+                                    <img src="img_source/img_website/StarW.png" alt="">
+                                    <img src="img_source/img_website/StarW.png" alt="">
                                 </div>
                             </div>
                             <div class="item_right_description">
