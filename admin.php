@@ -1,7 +1,7 @@
 <?php
 include_once("connect_db.php");
 session_start();
-if (!isset($_SESSION['uname']) && $_SESSION['admin'] != 1) {
+if ($_SESSION['admin'] != 1) {
 
     header('Location: index.php');
 }
@@ -40,16 +40,16 @@ $res_countsub = $countsub->fetch(PDO::FETCH_ASSOC);
             <div class="filter_column">USERS
                 <div class="detail_filter"><?php echo $res_countuser['Count(id)']; ?></div>
             </div>
-            <div class="filter_column">ADMIN 
+            <div class="filter_column">ADMIN
                 <div class="detail_filter"><?php echo $res_countadmin['Count(id)']; ?></div>
             </div>
-            <div class="filter_column">PRODUCTS 
+            <div class="filter_column">PRODUCTS
                 <div class="detail_filter"><?php echo $res_countproduct['Count(id)']; ?></div>
             </div>
-            <div class="filter_column">CATEGORIES 
+            <div class="filter_column">CATEGORIES
                 <div class="detail_filter"><?php echo $res_countcategory['Count(id)']; ?></div>
             </div>
-            <div class="filter_column">SUB CATEGORIES 
+            <div class="filter_column">SUB CATEGORIES
                 <div class="detail_filter"><?php echo $res_countsub['Count(id)']; ?></div>
             </div>
         </div>

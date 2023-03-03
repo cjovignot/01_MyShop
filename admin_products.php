@@ -1,10 +1,11 @@
 <?php
 include_once("connect_db.php");
 session_start();
-if (!isset($_SESSION['uname']) && $_SESSION['admin'] != 1) {
+if ($_SESSION['admin'] != 1) {
 
   header('Location: index.php');
-} ?>
+}
+?>
 
 <!-- NAV ADMIN --------------------------------------- -->
 <html>
