@@ -319,7 +319,7 @@ body {
     height: 47px;
     border: none;
     margin-bottom: 15px;
-    color: #bfc0c0;
+    color: #b9b9b9;
     background: #d9d9d90f;
     padding: 14px;
     display: flex;
@@ -359,6 +359,34 @@ body {
     cursor: pointer;
     transition: 0.2s;
 }
+.form_test input[type=button] {
+    color: #262626;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 40px;
+    border: none;
+    color: bfc0c0;
+    font-size: 18px;
+    font-weight: 500;
+    background: #262626;
+    box-shadow: 8px 8px 15px #202020, -8px -8px 15px #2c2c2c;
+    transition: box-shadow .35s ease !important;
+    outline: none;
+    display: flex;
+    margin: 20px;
+}
+.form_test input[type=button]:hover {
+    background-color: #262626;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.form_test a {
+    text-decoration: none;
+}
+
 #range_test_label {
     color: #d9d9d9;
     width: 100%;
@@ -426,6 +454,9 @@ body {
     font-size: 16px;
     font-weight: bold;
     background: #d9d9d9;
+}
+#buttons_filter {
+    display: flex;
 }
 /* END FILTER TEST */
 
