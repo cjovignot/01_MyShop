@@ -76,24 +76,37 @@ if (isset($_POST['name']) == true){
 
 
 <!DOCTYPE HTML>
-<form action="admin_category_create.php" method="post" enctype="multipart/form-data">
-    <h2>CREATE CATEGORY</h2>
-            <label>Category name</label>
 
-                    <input type="text" name="name" placeholder="Category Name"><br>
+<?php include("nav_bar.php") ?>
+<head>
+    <link rel="stylesheet" href="">
+    <meta charset="UTF-8">
+    <title>Wankers by Epitech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="stylesheet.css" rel="stylesheet">
+</head>
 
-            <label>Select a parent if it's a sub category:</label>
 
-                    <select name="parent_id">
-                        <option name="isparent" value='0'></option>
-                        <?php getcat($pdo) ?>
-                    </select><br>
+<div class="panel">
+    <form action="admin_category_create.php" method="post" enctype="multipart/form-data">
+        <h2>CREATE CATEGORY</h2>
+                <label>Category name</label>
 
-        <button type="submit">ADD</button>
-</form>
+                        <input type="text" name="name" placeholder="Category Name"><br>
 
-<form action="admin_categories.php">
-    
+                <label>Select a parent if it's a sub category:</label>
 
-        <button type="submit">CANCEL</button>
-</form>
+                        <select name="parent_id">
+                            <option name="isparent" value='0'></option>
+                            <?php getcat($pdo) ?>
+                        </select><br>
+
+            <button type="submit">ADD</button>
+    </form>
+
+    <form action="admin_categories.php">
+        
+
+            <button type="submit">CANCEL</button>
+    </form>
+</div>

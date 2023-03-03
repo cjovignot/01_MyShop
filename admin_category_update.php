@@ -47,7 +47,7 @@ if (isset($_POST['name']) == true) {
         // header('location: admin_category_create.php');
     }
 }
-var_dump($createstatus);
+// var_dump($createstatus);
 if ($createstatus == true) {
     update_categories($pdo, $catname_set, $parent_id_set, $is_sub_set, $id);
     header('location: admin_categories.php');
@@ -77,10 +77,10 @@ function update_categories($pdo, $catname_set, $parent_id_set = 0, $is_sub_set =
 {
 
 
-    var_dump($catname_set);
-    var_dump($parent_id_set);
-    var_dump($is_sub_set);
-    var_dump($id);
+    // var_dump($catname_set);
+    // var_dump($parent_id_set);
+    // var_dump($is_sub_set);
+    // var_dump($id);
 
     $pdo->query("UPDATE categories SET name = '$catname_set', parent_id = '$parent_id_set', is_sub = '$is_sub_set' WHERE id ='$id'");
 }
@@ -90,24 +90,37 @@ function update_categories($pdo, $catname_set, $parent_id_set = 0, $is_sub_set =
 
 
 <!DOCTYPE HTML>
-<form action="admin_category_update.php?id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
-    <h2>UPDATE CATEGORY: <?php echo $cat_name['name'];  ?></h2>
-    <label>Category name</label>
 
-    <input type="text" name="name" placeholder="Category Name"><br>
-
-    <label>Select a parent if it's a sub category:</label>
-
-    <select name="parent_id">
-        <option name="isparent" value='0'></option>
-        <?php getcat($pdo) ?>
-    </select><br>
-
-    <button type="submit">ADD</button>
-</form>
-
-<form action="admin_categories.php">
+<?php include("nav_bar.php") ?>
+<head>
+    <link rel="stylesheet" href="">
+    <meta charset="UTF-8">
+    <title>Wankers by Epitech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="stylesheet.css" rel="stylesheet">
+</head>
 
 
-    <button type="submit">CANCEL</button>
-</form>
+<div class="panel">
+    <form action="admin_category_update.php?id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
+        <h2>UPDATE CATEGORY: <?php echo $cat_name['name'];  ?></h2>
+        <label>Category name</label>
+
+        <input type="text" name="name" placeholder="Category Name"><br>
+
+        <label>Select a parent if it's a sub category:</label>
+
+        <select name="parent_id">
+            <option name="isparent" value='0'></option>
+            <?php getcat($pdo) ?>
+        </select><br>
+
+        <button type="submit">ADD</button>
+    </form>
+
+    <form action="admin_categories.php">
+
+
+        <button type="submit">CANCEL</button>
+    </form>
+</div>

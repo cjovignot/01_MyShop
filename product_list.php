@@ -20,8 +20,13 @@ session_start();
 </head>
 <?php
     function index_display_products($pdo){
-        if ($_GET['min_range'] == true || $_GET['max_range'] == true && $_SESSION['query'] != "") {
-            $display_products = $pdo->query("SELECT * FROM products WHERE price >= $_GET[min_range] AND price <= $_GET[max_range] AND name LIKE '%$_SESSION[query]%' LIMIT 7");
+        if ($_GET['min_range'] == true || $_GET['max_range'] == true && $_SESSION['query'] != "" && $_GET['category'] == true) {
+            $category_name = $_GET['category'];
+            $fetch_category = $pdo->query("SELECT id FROM categories WHERE name='$category_name'");
+            $fetch_category = $fetch_category->fetch(PDO::FETCH_ASSOC);
+            $category_for_filter = $fetch_category['id'];
+
+            $display_products = $pdo->query("SELECT * FROM products WHERE price >= $_GET[min_range] AND price <= $_GET[max_range] AND name LIKE '%$_SESSION[query]%' AND category_id = '$category_for_filter' LIMIT 7");
             $resdisplay_products = $display_products->fetchAll(PDO::FETCH_ASSOC);
 
             foreach($resdisplay_products as $row) {
@@ -113,7 +118,6 @@ session_start();
                 <?php
             }
         }
-        
     }
 ?>
 <footer>

@@ -11,7 +11,6 @@ include_once("connect_db.php");
                     if ($_GET['category']) {
                         echo $_GET['category'];
                     } else {
-                        
                         echo "<option value='none'>-- Choose a category --</option>";
                     }
                 ?>
