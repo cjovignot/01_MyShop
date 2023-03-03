@@ -44,7 +44,7 @@ session_start();
                             </div>
                             <div class="item_right_description">
                                 <div class="price"><?php echo $row['price'] . " €";?></div>
-                                <a href=""><div class="item_cart_plus"></div></a>
+                                <a href="" aria-label="Add to shopping cart"><div class="item_cart_plus"></div></a>
                             </div>
                         </div>
                     </div>
@@ -59,22 +59,22 @@ session_start();
                 // $table=$row['table'];
                 ?>
                     <div class="item">
-                        <a href="" class="item_picture"><img src="<?php echo $row['image_path'];?>" alt="<?php echo $row['name'];?>"></a>
+                        <a href="" class="item_picture" aria-label="Item picture"><img src="<?php echo $row['image_path'];?>" alt="<?php echo $row['name'];?>"></a>
                         <div class="item_description">
                             <div class="item_left_description">
                                 <div class="item_name"><?php echo $row['name'];?></div>
                                 <div class="item_details"><?php echo strtoupper($row['description']);?></div>
                                 <div class="ranking">
-                                    <img src="img_source/img_website/Star - OnW.png" alt="">
-                                    <img src="img_source/img_website/Star - OnW.png" alt="">
-                                    <img src="img_source/img_website/Star - OnW.png" alt="">
-                                    <img src="img_source/img_website/StarW.png" alt="">
-                                    <img src="img_source/img_website/StarW.png" alt="">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="filled star">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="filled star">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="filled star">
+                                    <img src="img_source/img_website/StarW.png" alt="empty star">
+                                    <img src="img_source/img_website/StarW.png" alt="empty star">
                                 </div>
                             </div>
                             <div class="item_right_description">
                                 <div class="price"><?php echo $row['price'] . " €";?></div>
-                                <a href=""><div class="item_cart_plus"></div></a>
+                                <a href="" aria-label="Add to shopping cart"><div class="item_cart_plus"></div></a>
                             </div>
                         </div>
                     </div>
@@ -91,22 +91,22 @@ session_start();
                 // $table=$row['table'];
                 ?>
                     <div class="item">
-                        <a href="" class="item_picture"><img src="<?php echo $row['image_path'];?>" alt="<?php echo $row['name'];?>"></a>
+                        <a href="" class="item_picture"><img src="<?php echo $row['image_path'];?>" alt="people doing things"<?php echo $row['name'];?>"></a>
                         <div class="item_description">
                             <div class="item_left_description">
                                 <div class="item_name"><?php echo $row['name'];?></div>
                                 <div class="item_details"><?php echo strtoupper($row['description']);?></div>
                                 <div class="ranking">
-                                    <img src="img_source/img_website/Star - OnW.png" alt="">
-                                    <img src="img_source/img_website/Star - OnW.png" alt="">
-                                    <img src="img_source/img_website/Star - OnW.png" alt="">
-                                    <img src="img_source/img_website/StarW.png" alt="">
-                                    <img src="img_source/img_website/StarW.png" alt="">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="filled star">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="filled star">
+                                    <img src="img_source/img_website/Star - OnW.png" alt="filled star">
+                                    <img src="img_source/img_website/StarW.png" alt="empty star">
+                                    <img src="img_source/img_website/StarW.png" alt="empty star">
                                 </div>
                             </div>
                             <div class="item_right_description">
                                 <div class="price"><?php echo $row['price'] . " €";?></div>
-                                <a href=""><div class="item_cart_plus"></div></a>
+                                <a href=""aria-label="Add to shopping cart"><div class="item_cart_plus"></div></a>
                             </div>
                         </div>
                     </div>
