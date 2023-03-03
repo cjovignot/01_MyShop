@@ -1,16 +1,16 @@
 <!DOCTYPE HTML>
 
 <head>
-        <link rel="stylesheet" href="">
-        <meta charset="UTF-8">
-        <title>Wankers by Epitech</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="">
+    <meta charset="UTF-8">
+    <title>Wankers by Epitech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="stylesheet.css" rel="stylesheet">
 </head>
 
 
 <?php
-    include("connect_db.php");
+include("connect_db.php");
 ?>
 
 <?php
@@ -28,6 +28,8 @@ if (($_POST['username']) == NULL || ($_POST['email']) == NULL || ($_POST['passwo
 } else if ($username_verif) {
     // username found
     echo "Username already exists - ";
+} else if (!preg_match('/^[a-zA-Z][0-9a-zA-Z_]{2,23}[0-9a-zA-Z]$/', $username)) {
+    echo 'Your login must only contain letters and number. you can use "_" if needed.';
 } else if (($_POST['username']) == NULL) {
     echo "Please choose a username";
 } else if ($email_verif) {
@@ -39,6 +41,8 @@ if (($_POST['username']) == NULL || ($_POST['email']) == NULL || ($_POST['passwo
     echo "Invalid email format ! - ";
 } else if (($_POST['password']) == NULL) {
     echo "Please check your password, something's missing ! - ";
+} else if (!preg_match('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%.^&*-]).{8,}$/', $_POST['password'])) {
+    echo 'Your password must contain 1 letter, 1 number and 1 special caracter and its minimum length must be 8';
 } else if (($_POST['password']) !== ($_POST['password_check'])) {
     echo "Wrong password somewere, no match ! - ";
 } else {
@@ -71,6 +75,6 @@ if (($_POST['username']) == NULL || ($_POST['email']) == NULL || ($_POST['passwo
         <button class="second_button" type="submit">Register</button>
     </form>
 
-      <script src="range.js"></script>
+    <script src="range.js"></script>
 
 </body>
