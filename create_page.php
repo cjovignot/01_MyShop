@@ -15,11 +15,12 @@ session_start();
 
         $page_product = 0;
         $var_offset = -7;
+        
         while ($page_product < $nb_page) {
             $page_product++;
             $var_offset += 7;
             echo "<form action='index.php' method='get'>
-            <input type='submit' name='page' value=$page_product>
+            <button class='page_button' type='submit' name='page'>$page_product</button>
             <input type='hidden' name='offset' value=$var_offset>
             </form>";
         }

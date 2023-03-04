@@ -1,15 +1,10 @@
+<!DOCTYPE HTML>
 <!-- NAV ADMIN --------------------------------------- -->
 <html>
-<?php include("nav_bar.php") ?>
-<!-- END NAV ADMIN --------------------------------------- -->
-<!-- DISPLAY PANEL / ACTION --------------------------------------------------------- -->
-<div class="panel">
-	<div class="user_array">
-		<h2>PRODUCT UPDATE</h2>
-		<h4>Product info will remain the same if untouched</h4>
-
-		<?php
-
+	<?php include("nav_bar.php") ?>
+	<!-- END NAV ADMIN --------------------------------------- -->
+	<!-- DISPLAY PANEL / ACTION --------------------------------------------------------- -->
+	<?php
 		include_once("connect_db.php");
 		session_start();
 		if (!isset($_SESSION['uname']) && $_SESSION['admin'] != 1) {
@@ -123,7 +118,7 @@
 					$formaterror = true;
 					//header('Location: adminupdateproducts.php?id=' . $_GET['id']);
 				}
-
+				
 				if ($picture_error === UPLOAD_ERR_OK) {
 					//Move uploaded file to desired directory
 					move_uploaded_file($picture_tmp_name, 'uploads/' . $picture_name);
@@ -153,55 +148,63 @@
 		}
 		//var_dump($_SESSION);
 
-		?>
-		<!DOCTYPE HTML>
-		<style>
-			.alert {
-				color: red;
-			}
-		</style>
-		<form class="admin_form" action="adminupdateproducts.php?id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
-			<label class="update_form_field"></label>
+	?>
 
-
-			<!-- //  if (isset($_GET['error'])) { 
-	// <p class="error"> echo $_GET['error'];</p>
--->
-			<label>Product Name</label>
-			<div class="input_admin_form">
-				<input type="text" name="name" placeholder="Enter new product Name"><br>
+	<div id="container">
+		<div id="admin_menu_left">  
+			<div id="title_menu">DISPLAY BY</div>
+			<div id="admin_sub_menu_left">
+				<a class="link_admin_menu" href="admin_products.php">PRODUCTS</a>
+				<a class="link_admin_menu" href="admin_users.php">USERS</a>  
+				<a class="link_admin_menu" href="admin_categories.php">CATEGORIES</a>
 			</div>
+		</div>
+		<div class="panel">
+			<h2 class="login_title">PRODUCT UPDATE</h2>
+			<h4>Product info will remain the same if untouched</h4>
 
-			<label>Product Price</label>
-			<div class="input_admin_form">
-				<input type="number" name="price" placeholder="Enter new product Price"><br>
-			</div>
+			<form action="adminupdateproducts.php?id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
+				<label class="update_form_field"></label>
+				<!-- //  if (isset($_GET['error'])) { 
+					// <p class="error"> echo $_GET['error'];</p> -->
+				<label class="login_input_field">Product Name</label>
+				<div class="login_input_field">
+					<input class="validate" type="text" name="name" placeholder="Enter new product Name"><br>
+				</div>
 
-			<label>Description</label>
-			<div class="input_admin_form">
-				<input type="text" name="description" placeholder="Enter new description"><br>
-			</div>
+				<label class="login_input_field">Product Price</label>
+				<div class="login_input_field">
+					<input class="validate"  type="number" name="price" placeholder="Enter new product Price"><br>
+				</div>
 
-			<label>Select a category</label>
-			<div class="login_input_field">
-				<select name="cat_id">
-					<option name="isparent" value='0'></option>
-					<?php getcat($pdo) ?>
-				</select><br>
-			</div>
+				<label class="login_input_field">Description</label>
+				<div class="login_input_field">
+					<input class="validate"  type="text" name="description" placeholder="Enter new description"><br>
+				</div>
 
-			<label for="picture">Upload a new Picture:</label>
-			<div class="input_admin_form">
-				<input type="file" name="picture"><br>
-				<p class="alert"> <?php echo $errormsg . " " . $errormsg2 ?></p>
-			</div>
-			<input type="hidden" name="id" value='<?php echo $_GET['id']; ?>'><br>
-			<button class="form_button" type="submit">Update</button>
+				<label class="login_input_field">Select a category</label>
+				<div class="login_input_field">
+					<select name="cat_id">
+						<option name="isparent" value='0'></option>
+						<?php getcat($pdo) ?>
+					</select><br>
+				</div>
 
-		</form>
+				<label class="login_input_field" for="picture">Upload a new Picture:</label>
+				<div class="login_input_field">
+					<input class="validate"  type="file" name="picture"><br>
+					<p class="alert"> <?php echo $errormsg . " " . $errormsg2 ?></p>
+				</div>
+				<input type="hidden" name="id" value='<?php echo $_GET['id']; ?>'><br>
+				<button class="admin_button" type="submit">Update product</button>
 
-		<form action="admin_products.php" method="post">
-			<div class="form_buttons">
-				<button class="form_button" type="submit" name="cancel">Cancel</button>
-			</div>
-		</form>
+			</form>
+
+			<form action="admin_products.php" method="post">
+				<div class="form_buttons">
+					<button class="admin_button" type="submit" name="cancel">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</html>

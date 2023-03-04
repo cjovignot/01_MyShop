@@ -11,15 +11,8 @@ session_start();
     <link href="stylesheet.css" rel="stylesheet">
 </head>
 
-<head>
-    <link rel="stylesheet" href="">
-    <meta charset="UTF-8">
-    <title>Wankers by Epitech</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="stylesheet.css" rel="stylesheet">
-</head>
 <?php
-    function index_display_products($pdo){
+    function index_display_products($pdo) {
         if ($_GET['min_range'] == true || $_GET['max_range'] == true && $_SESSION['query'] != "" && $_GET['category'] == true) {
             $category_name = $_GET['category'];
             $fetch_category = $pdo->query("SELECT id FROM categories WHERE name='$category_name'");
