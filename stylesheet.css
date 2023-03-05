@@ -178,6 +178,13 @@ html {
                 box-shadow: inset 5px 5px 5px #232323, inset -5px -5px 5px #292929;
                 outline: none;
             }
+            #header_right a {
+                font-size: 18px!important;
+            }
+            #hamburger-menu li {
+                color: coral;
+                font-size: 18px!important;
+            }
         }
 
 
@@ -781,16 +788,15 @@ header{
             }
             #nav_bar_search {
                 display: flex;
-                margin-top: 10px;
+                padding: 10px;
             }
             #search_input {
                 width: 100%;
                 margin-left: 40px;
                 font-family: 'Basier';
                 border: none;
-                margin-bottom: 15px;
                 color: #bfc0c0;
-                background:#d9d9d90f;
+                background: #d9d9d90f;
                 padding: 14px;
                 font-size: 16px;
                 border-radius: 10px;
@@ -803,7 +809,6 @@ header{
                 margin-top: 10px;
             }
             #search_input {
-                margin-top: 10px;
                 margin-left: 8px;
             }
         }
