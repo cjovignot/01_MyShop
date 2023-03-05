@@ -536,7 +536,8 @@ header{
         @media all and (max-device-width: 480px) {
             #infos_filter {
                 background-color: #b9b9b900;
-                margin-top: 100px;
+                margin-top: 70px;
+                margin-bottom: -60px;
             }
             #active_filter_title {
                 width: 100%;
@@ -632,7 +633,7 @@ header{
     @media all and (max-device-width: 480px) {
         #container {
             margin: 0 3%;
-            margin-top: 160px;
+            margin-top: 60px;
             display: flex;
             justify-content: center;
         }
