@@ -5,7 +5,8 @@ include_once("connect_db.php");
 <div class="item">
     <label id="filter_test_label" for="filter_test">FILTER BY</label>
 
-    <form class="form_test" method="get">
+    <button type="button" class="filter_collapse">Filters</button>
+    <form class="filter_item_collapse" class="form_test" method="get">
         <select id="category_field" name="category" class="field">
                 <?php
                     if ($_GET['category']) {

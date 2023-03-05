@@ -11,18 +11,29 @@ session_start();
 include_once("nav_bar.php");
 ?>
 <body>
-    <div id="infos_filter">
-        <div id="active_filter_title">Active filters</div>
-        <div class="filter_column">Category
-            <div class="detail_filter"><?php if ($_GET) { echo $_GET['category']; } ?></div>
-        </div>
-        <div class="filter_column">MIN 
-            <div class="detail_filter"><?php if ($_GET) { echo $_GET['min_range'] . " €"; } ?></div>
-        </div>
-        <div class="filter_column">MAX 
-            <div class="detail_filter"><?php if ($_GET) { echo $_GET['max_range'] . " €"; } ?></div>
-        </div>
-    </div>
+    <?php
+    if ($_GET['category'] == true || $_GET['min_range'] == true || $_GET['max_range'] == true) {
+            echo "
+            <div id='infos_filter'>
+                <div id='active_filter_title'>Active filters</div>
+                <div class='filter_column'>Category
+                    <div class='detail_filter'>
+                        $_GET[category]
+                    </div>
+                </div>
+                <div class='filter_column'>MIN 
+                    <div class='detail_filter'>
+                        $_GET[min_range] €
+                    </div>
+                </div>
+                <div class='filter_column'>MAX 
+                    <div class='detail_filter'>
+                        $_GET[max_range] €
+                    </div>
+                </div>
+            </div>";
+        }
+    ?>
     <div id="container">
         <?php
         include_once("active_filter.php");

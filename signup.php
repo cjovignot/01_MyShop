@@ -51,7 +51,7 @@ include("connect_db.php");
         $sql = $pdo->query("INSERT INTO users (username, password, email, admin) VALUES ('$_POST[username]', '$hash', '$_POST[email]', '0')");
         
         echo "Registration complete !" . PHP_EOL . "Welcome abord " . $_POST['username'] . "! - ";
-        header("Location:http://localhost:8000/index.php");
+        header("Location:index.php");
     }
 ?>
 

@@ -297,9 +297,10 @@ header{
             color: #C9CACC;
         }
         .form_test {
-            margin: 0;
+            margin: 5px 10px;
         }
         #category_field {
+            width: 100%;
             height: 47px;
             border: none;
             margin-bottom: 15px;
@@ -334,7 +335,24 @@ header{
             transition: box-shadow .35s ease !important;
             outline: none;
             display: flex;
-            margin: 20px auto;
+            margin: 20px;
+        }
+        #buttons_filter input[type=submit], input[type=button] {
+            color: #262626;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 15px 30px;
+            border-radius: 40px;
+            border: none;
+            color: bfc0c0;
+            font-size: 18px;
+            font-weight: 500;
+            background: #262626;
+            box-shadow: 8px 8px 15px #202020, -8px -8px 15px #2c2c2c;
+            transition: box-shadow .35s ease !important;
+            outline: none;
+            display: flex;
+            margin: 20px;
         }
         .form_test input[type=submit]:hover {
             background-color: #262626;
@@ -342,6 +360,28 @@ header{
             color: white;
             cursor: pointer;
             transition: 0.2s;
+        }
+        #buttons_filter input[type=submit]:hover, input[type=button]:hover {
+            background-color: #262626;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .form_test input[type=submit]:active {
+            background: linear-gradient(145deg,#222222, #292929);
+            box-shadow: 5px 5px 10px #262626, -5px -5px 10px #262626;
+            border: none;
+            outline: none;
+        }
+        #buttons_filter input[type=submit]:active, input[type=button]:active {
+            background: linear-gradient(145deg,#222222, #292929);
+            box-shadow: 5px 5px 10px #262626, -5px -5px 10px #262626;
+            border: none;
+            outline: none;
+        }
+        #buttons_filter a {
+            text-decoration: none;
         }
         .form_test input[type=button] {
             color: #262626;
@@ -366,6 +406,12 @@ header{
             color: white;
             cursor: pointer;
             transition: 0.2s;
+        }
+        .form_test input[type=button]:active {
+            background: linear-gradient(145deg,#222222, #292929);
+            box-shadow: 5px 5px 10px #262626, -5px -5px 10px #262626;
+            border: none;
+            outline: none;
         }
         .form_test a {
             text-decoration: none;
@@ -441,14 +487,13 @@ header{
         }
         #buttons_filter {
             display: flex;
+            justify-content: center;
         }
         input[type=range] {
             -webkit-appearance: none;
-            width: 100%;
-            background: transparent; 
-            position: absolute;
-            left: 0;
-        }
+            background: transparent;
+            margin-top: -2.9px;
+          }
         
         input[type=range]::-webkit-slider-thumb {
             -webkit-appearance: none;
@@ -470,6 +515,23 @@ header{
             border-radius: 1px;
             border: none;
         }
+        /* START TEST FOR FILTER */
+        .filter_collapse {
+            display: none;
+            background-color: #777;
+            justify-content: space-between;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+        }
+        .filter_collapse::after {
+            content: " ﹀";
+        }
+        /* END TEST FOR FILTER */
 
         @media all and (max-device-width: 480px) {
             #infos_filter {
@@ -490,6 +552,33 @@ header{
                 margin-left: 20px;
             }
         }
+
+/* START TEST FOR FILTER */
+@media all and (max-device-width: 480px) {
+.filter_collapse {
+    height: 47px;
+    border: none;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    color: #b9b9b9;
+    background: #d9d9d90f;
+    padding: 14px;
+    display: flex;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 5px #232323, inset -5px -5px 5px #292929;
+    outline: none;
+}
+.filter_item_collapse{
+    display: none;
+}
+
+#filter_test_label {
+    display: none;
+}
+}
+/* END TEST FOR FILTER */
+
         /* END FILTER */
 
         /* START PRODUCTS */
@@ -543,7 +632,7 @@ header{
     @media all and (max-device-width: 480px) {
         #container {
             margin: 0 3%;
-            margin-top: 110px;
+            margin-top: 160px;
             display: flex;
             justify-content: center;
         }
@@ -586,7 +675,7 @@ header{
         background-image: url(img_source/img_website/SearchW.png);
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 50%;
+        background-size: 36%;
         height: 60px;
         width: 60px;
     }
@@ -599,18 +688,21 @@ header{
         width: 60px;
         transition: 0.2s;
     }
+    .ranking img {
+        height: 12px;
+    }
     /* Product logos */
     .item_cart_plus {
-        background-size: 60%;
+        background-size: 80%;
         background-image: url("img_source/img_website/Cart Button PLUS W.png");
-        background-position: right;
+        background-position: center;
         background-repeat: no-repeat;
         height: 35px;
         width: 35px;
         transition: 0.2s;
     }
     .item_cart_plus:hover {
-        background-size: 64%;
+        background-size: 85%;
         transition: 0.2s;
     }
 
@@ -666,11 +758,12 @@ header{
             /* Search bar */
             #search_bar {
                 display: flex;
+                margin: 0;
                 width: 100%;
             }
             #nav_bar_search {
                 display: flex;
-                padding: 7px 0px 0px 0px;
+                margin-top: 10px;
             }
             #search_input {
                 width: 100%;
@@ -690,10 +783,10 @@ header{
             /* RESPONSIVE SEARCH BAR */
         @media all and (max-device-width: 480px) {
             #search_logo {
-                margin-top: 20px;
+                margin-top: 10px;
             }
             #search_input {
-                margin-top: 20px;
+                margin-top: 10px;
                 margin-left: 8px;
             }
         }
@@ -820,6 +913,7 @@ header{
 
         @media all and (max-device-width: 480px) {
             .panel {
+                align-items: center;
                 color: coral;
                 text-align: center;
                 flex-wrap: wrap;
@@ -877,6 +971,11 @@ header{
             color: chocolate;
         }
         /* START Update and delete button */
+        
+        .delete_container {
+            height: 100vh;
+            display: flex;
+        }
         .input_update {
             text-decoration: none;
             background-color: #F3DFBF;
@@ -914,7 +1013,6 @@ header{
             margin: 20px;
         }
         .action_button {
-            width: 400px;
             text-align: center;
             display: flex;
             justify-content: center;

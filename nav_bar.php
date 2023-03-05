@@ -19,7 +19,7 @@
     <div id="header_left">
         <a href="index.php" aria-label="Main menu"><div id="home_logo"></div></a>
         <?php
-        if (!isset($_SESSION['admin']) == 1) {
+        if (isset($_SESSION['uname']) == false || isset($_SESSION['uname']) == true || isset($_SESSION['admin']) == 0) {
             echo "<div id='search_logo'></div>";
         }
         ?>
@@ -79,11 +79,11 @@
         </div>
         <div id="header_right_bottom">
             <?php
-            if (!isset($_SESSION['admin']) == 1) {
+            if (isset($_SESSION['uname']) == false || isset($_SESSION['uname']) == true || isset($_SESSION['admin']) == 0) {
                 echo "
                 <div id='nav_bar_search'>
                     <form id='search_bar' action=''>
-                        <input id='search_input' type='text' name='query' value=<?php echo $_SESSION[query] ?> placeholder='Search...'>
+                        <input id='search_input' type='text' name='query'  value=$_SESSION[query]>
                         <button hidden type='submit'></button>
                     </form>
                 </div>";

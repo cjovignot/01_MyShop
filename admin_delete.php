@@ -57,33 +57,35 @@
 
 
 <body>
-    <div class="panel" >     
-        <div class="login_title">ARE YOU SURE?</div>
+    <div class="delete_container">
+        <div class="panel" >     
+            <div class="login_title">ARE YOU SURE?</div>
 
-        <p>You are about to delete the <?php echo $table ?>: </p>
-        <div class="resultdelete">
-            <?php $deleteselect = $pdo->query("SELECT * FROM $table WHERE id = $id");
-                $resdelete = $deleteselect->fetch(PDO::FETCH_ASSOC);
-                if ($table == "users") {
-                    echo $resdelete['username'];
-                } else if ($table == 'categories') {
-                    echo $resdelete['name'];
-                } else if ($table == 'products') {
-                    echo $resdelete['name'];
-                }
-            ?>
-        </div>
-        <div class="alert"> <?php echo $SUBERROR ?></div>
-        <div class="action_button">
-            <form action="admin_<?php echo $_GET["table"]; ?>.php" method="post">
-                <button class=cancel type="submit" name="cancel">Cancel</button>
-            </form>
+            <p>You are about to delete the <?php echo $table ?>: </p>
+            <div class="resultdelete">
+                <?php $deleteselect = $pdo->query("SELECT * FROM $table WHERE id = $id");
+                    $resdelete = $deleteselect->fetch(PDO::FETCH_ASSOC);
+                    if ($table == "users") {
+                        echo $resdelete['username'];
+                    } else if ($table == 'categories') {
+                        echo $resdelete['name'];
+                    } else if ($table == 'products') {
+                        echo $resdelete['name'];
+                    }
+                ?>
+            </div>
+            <div class="alert"> <?php echo $SUBERROR ?></div>
+            <div class="action_button">
+                <form action="admin_<?php echo $_GET["table"]; ?>.php" method="post">
+                    <button class=cancel type="submit" name="cancel">Cancel</button>
+                </form>
 
-            <form action="admin_delete.php?id=<?php echo $_GET["id"]; ?>&table=<?php echo $_GET["table"]; ?>" method="post">
-                <button class=confirm type="submit" name="confirm">Confirm</button>
-            </form>
+                <form action="admin_delete.php?id=<?php echo $_GET["id"]; ?>&table=<?php echo $_GET["table"]; ?>" method="post">
+                    <button class=confirm type="submit" name="confirm">Confirm</button>
+                </form>
+            </div>
+            <script src="range.js"></script>
         </div>
-        <script src="range.js"></script>
     </div>
 </body>
 
